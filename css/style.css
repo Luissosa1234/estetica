@@ -1,0 +1,90 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  background: url(../img/prin.jpg);
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  size: 62.5%; /**Reset para REMS - 62.5% =10px de 16px**/
+}
+
+.contenedor {
+  width: 95%;
+  margin: auto;
+  min-width: 62rem;
+  max-width: 62rem;
+  display: flex;
+}
+
+.navegador {
+  width: 100%;
+  margin: auto;
+  display: inline-flex;
+  margin-top: 1rem;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 3rem;
+}
+
+.navegador a {
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 1rem 0.3rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+  color: black;
+  border: solid 0.01rem black;
+  /* color */
+  background: linear-gradient(
+    to bottom,
+    rgba(254, 254, 254, 1) 0%,
+    rgba(254, 254, 254, 1) 13%,
+    rgba(209, 209, 209, 1) 49%,
+    rgba(219, 219, 219, 1) 62%,
+    rgba(226, 226, 226, 1) 100%
+  );
+}
+
+.abajo{
+    margin-top: .8rem;
+}
+
+.navegador a:hover {
+    
+  background: linear-gradient(
+    to bottom,
+    rgba(147, 206, 222, 1) 0%,
+    rgba(117, 189, 209, 1) 41%,
+    rgba(40, 113, 191, 1) 100%
+  );
+}
+
+.navegador ul {
+  display: inline-block;
+  margin-left: -40px;
+  margin-top: 0.8rem;
+}
+.navegador li {
+  list-style: none;
+  text-align: left;
+  height: 2.8rem;
+}
+
+.navegador li > ul {
+  display: none;
+  margin-top: 1rem;
+}
+
+.navegador li:hover > ul {
+  display: block;
+  position: absolute;
+}
+
+.navegador img {
+  margin-left: 1rem;
+  border-radius: 2rem;
+  width: 4rem;
+  border: solid 0.1rem black;
+}
