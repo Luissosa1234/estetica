@@ -256,3 +256,12 @@ box-shadow: inset 7px -7px 55px -8px rgba(0,0,0,0.47)
   color: rgb(88, 88, 88);
   font-weight: bolder;
 }
+
+
+/* FORMULARIOS */
+
+.f_centrar{
+  width: 20rem;
+  margin: auto;
+  text-align: left;
+}

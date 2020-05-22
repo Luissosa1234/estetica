@@ -6,10 +6,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estetica</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  
+  <script>
+    function ValidaFormulario() {
+  var valorNombre = document.getElementById("txtnombre").value;
+
+  var valoremail = document.getElementById("txtemail").value;
+
+  var carrera = document.getElementById("tipo_moto").selectedIndex;
+
+  var radios = document.getElementsByName("marca");
+
+  var dia = document.getElementById("combo_dia").selectedIndex;
+
+  var semana = document.getElementById("combo_semana").selectedIndex;
+
+  var ano = document.getElementById("combo_ano").selectedIndex;
+
+  var checkBox = document.getElementsByName("checkbox_accesorios");
+
+  var valorobservaciones = document.getElementById("txtobservaciones").value;
+
+
+  // NOMBRE
+
+  if (
+    valorNombre == null ||valorNombre.length == 0 ||/^\s+$/.test(valorNombre)) {
+    alert("Debes escribir tu nombre completo");
+    document.getElementById("txtnombre").focus();
+    return false;
+  }
+
+  // CORREO
+  if (
+    valoremail == null ||valoremail.length == 0 ||/^\s+$/.test(valoremail)) {
+    alert("Debes escribir correo electronico");
+    document.getElementById("txtemail").focus();
+    return false;
+  }
+
+// TIPO MOTO
+
+  if (carrera == null || carrera == 00) {
+    alert("Debes seleccionar tu moto");
+    document.getElementById("tipo_moto").focus();
+    return false;
+  }
+
+// SELECCIONA LA MARCA
+  var seleccionado = false;
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      seleccionado = true;
+      break;
+    }
+  }
+
+  if (!seleccionado) {
+    alert("Debes elegir una marca");
+    document.getElementById("marca1").focus();
+    return false;
+  }
+
+
+  // FECHA DE ENTREGA
+
+  if (dia == null || dia == 00) {
+    alert("Debes elegir un dia");
+    document.getElementById("combo_dia").focus();
+    return false;
+  }
+
+  if (semana == null || semana == 00) {
+    alert("Debes elegir un mes");
+    document.getElementById("combo_semana").focus();
+    return false;
+  }
+
+  if (ano == null || ano == 00) {
+    alert("Debes elegir una año");
+    document.getElementById("combo_ano").focus();
+    return false;
+  }
+
+
+  // SELECCIONA ACCESORIOS
+
+  var seleccionado2 = false;
+  for (var b = 0; b < checkBox.length; b++) {
+    if (checkBox[b].checked) {
+      seleccionado2 = true;
+      break;
+    }
+  }
+
+  if (!seleccionado2) {
+    alert("Debes elegir una forma de pago");
+    document.getElementById("checkbox_accesorios_1").focus();
+    return false;
+  }
+
+  if (
+    valorobservaciones == null ||valorobservaciones.length == 0 ||/^\s+$/.test(valorobservaciones)) {
+    alert("Debes escribir observaciones");
+    document.getElementById("txtobservaciones").focus();
+    return false;
+  }
+
+  return true;
+}
+
+  </script>
+
 </head>
 
 <body>
 
+  
   <!-- CONTENEDOR -->
   <div class="contenedor">
 
@@ -46,7 +160,7 @@
       </br>
       Estetica Diana le frua frua
       </br>
-      <a href="#" class="boton">VISITA</a>
+      <a href="#" class="boton">formulario uno</a>
     </div>
 
 
@@ -55,109 +169,208 @@
     <!-- CONTENIDO -->
 <!-- AQUI VA TODO EL CONTENIDO  -->
     <div class="contenido">
-
+<div class="form_centrar">
 <!-- PARA ARRIBA SON 5 IMAGENES  -->
-      <div class="superior">
-        <div class="cont1">
-          <table>
-            <tr>
-              <th>CORTES</th>
-            </tr>
-            <tr>
-              <td> <img src="../img/1.jpg" alt="uno"> </td>
-            </tr>
-            <tr>
-              <td>Cortes caballero </td>
-            </tr>
-            <tr>
-              <td> <a href="#" class="boton_dos">MORE</a></td>
-            </tr>
-            </tr>
-          </table>
-        </div>
-        <div class="cont1">
-          <table>
-            <tr>
-              <th>CORTES</th>
-            </tr>
-            <tr>
-              <td> <img src="../img/2.jpg" alt="uno"> </td>
-            </tr>
-            <tr>
-              <td>Cortes Dama </td>
-            </tr>
-            <tr>
-              <td> <a href="#" class="boton_dos">MORE</a></td>
-            </tr>
-            </tr>
-          </table>
-        </div>
-
-        <div class="cont1">
-          <table>
-            <tr>
-              <th>EXTENCIONES</th>
-            </tr>
-            <tr>
-              <td> <img src="../img/3.1.jpg" alt="uno"> </td>
-            </tr>
-            <tr>
-              <td>Extenciones </td>
-            </tr>
-            <tr>
-              <td> <a href="#" class="boton_dos">MORE</a></td>
-            </tr>
-            </tr>
-          </table>
-        </div>
-        <div class="cont1">
-          <table>
-            <tr>
-              <th>MAQUILLAJE</th>
-            </tr>
-            <tr>
-              <td> <img src="../img/4.jpg" alt="uno"> </td>
-            </tr>
-            <tr>
-              <td>Maquillaje </td>
-            </tr>
-            <tr>
-              <td> <a href="#" class="boton_dos">MORE</a></td>
-            </tr>
-            </tr>
-          </table>
-        </div>
-        <div class="cont1">
-          <table>
-            <tr>
-              <th>UÑAS</th>
-            </tr>
-            <tr>
-              <td> <img src="../img/3.jpg" alt="uno"> </td>
-            </tr>
-            <tr>
-              <td>Maniquire </td>
-            </tr>
-            <tr>
-              <td> <a href="#" class="boton_dos">MORE</a></td>
-            </tr>
-            </tr>
-          </table>
-        </div>
-      </div>
-<!-- PARA ARRIBA SON 5 IMAGENES  -->
-
-
-
-      <!-- contenido inferior -->
-
-      <div class="inferior_contenido">
-        
-<!-- >>>>>>>>> AGREGAR CONTENIDO AQUI <<<<<<<<<<<<<<<<< -->
-
-
+<form action="paginas/grabar_informacion15.php" method="post" id="form_vendiendo_motos" onsubmit="return ValidaFormulario();">
+  
+  
+<!-- NOMBRE Y CORREO -->
+  
+    <div class="f_centrar">
+    </br>
+     <label for="txtnombre">Nombre: </label>
+      </br>
+     <input type="text" name="txtnombre" id="txtnombre">
+    </br>
+     <label for="txtemail">Correo electronico: </label>
+      </br>
+     <input type="email" name="txtemail" id="txtemail">
   </div>
 
+
+  <!-- COMBOBOX PARA AGREGAR  -->
+  <div class="f_centrar" >
+  <p> Seleccionar tipo de moto:
+
+    <select txtnombre="TipoMoto" id="tipo_moto">
+        <option value="00">--Selecciona un tipo--</option>
+        <option value="pista">Moto de pista</option>
+        <option value="ruta">Moto de ruta</option>
+        <option value="cuatrimoto">Cuatrimoto</option>
+        <option value="carreras">Moto de carreras</option>
+        <option value="x">Moto X</option>
+    </select>
+
+  </p>
+  </div>
+
+
+  <div class="f_centrar">
+      <h3 class="centrar">Selecciona la marca:</h3>
+      <table>
+          <tr>
+              <td>
+                  <input type="radio" name="marca" id="marca1" value="Honda">Honda
+              </td>
+              <td>
+                  <input type="radio" name="marca" id="marca2" value="Yamaha">Yamaha
+              </td>
+              <td>
+                  <input type="radio" name="marca" id="marca3" value="Can Am">Can Am
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <input type="radio" name="marca" id="marca4" value="Italika">Italika
+              </td>
+              <td>
+                  <input type="radio" name="marca" id="marca5" value="BMW">BMW <br/>
+              </td>
+              <td>
+                  <input type="radio" name="marca" id="marca6" value="Harley Davison">Harley Davison
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <input type="radio" name="marca" id="marca7" value="Patito">Patito
+              </td>
+              <td>
+                  
+              </td>
+              <td>
+                  
+              </td>
+          </tr>
+      </table>
+     
+  </div>
+  <div class="f_centrar">
+      <h3 class="centrar">Seleciona fecha de entrega:</h3>
+
+<p>Día:
+<select txtnombre="dia" id="combo_dia">
+  <option value="00">--</option>
+  <option value="01">01</option>  <option value="02">02</option> <option value="03">03</option>
+  <option value="04">04</option>  <option value="05">05</option> <option value="06">06</option>
+  <option value="07">07</option>  <option value="08">08</option> <option value="09">09</option>
+  <option value="10">10</option>  <option value="11">11</option> <option value="12">12</option>
+  <option value="13">13</option>  <option value="14">14</option> <option value="15">15</option>
+  <option value="16">16</option>  <option value="17">17</option> <option value="18">18</option>
+  <option value="19">19</option>  <option value="20">20</option> <option value="21">21</option>
+  <option value="22">22</option>  <option value="23">23</option> <option value="24">24</option>
+  <option value="25">25</option>  <option value="26">26</option> <option value="27">27</option>
+  <option value="28">28</option>  <option value="29">29</option> <option value="30">30</option>
+  <option value="31">31</option>  
+</select>
+Mes:
+<select txtnombre="semana" id="combo_semana">
+  <option value="00">--</option>
+  <option value="Lunes">Lunes</option> <option value="Martes">Martes</option> <option value="Miercoles">Miercoles</option>
+  <option value="Jueves">Jueves</option> <option value="Vierdes">Viernes</option> <option value="Sabado">Sabado</option>
+  <option value="Domingo">Domingo</option>  
+</select>
+Año:
+<select txtnombre="ano" id="combo_ano">
+  <option value="00">----</option>
+  <option value="2015">2015</option> <option value="2016">2016</option> <option value="2017">2017</option>
+  <option value="2018">2018</option> <option value="2019">2019</option> <option value="2020">2020</option>
+  
+</select>
+</p>
+</div>
+<div class="f_centrar">
+<h3 class="centrar">Selecciona accesorrios: </h3>
+<table>
+<tr>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_1">Casco
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_2">Guantes
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_3">Winch
+          </label>
+</td>
+</tr>
+<tr>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_4">Barra leds
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_5">Chamarra
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_6">Googles
+          </label>
+</td>
+</tr>
+<tr>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_7">Botas
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_8">Rines dep
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_9">Pechera
+          </label>
+</td>
+</tr>
+<tr>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_10">Armadura
+          </label>
+</td>
+<td>
+  <label >
+      <input type="checkbox" name="checkbox_accesorios" id="checkbox_accesorios_11">Ninguna
+          </label>
+</td>
+</tr>
+
+</table>
+
+
+</div>
+<div class="obversaviones centrar colorear bordes">
+<h3 class="centrar">Agrega observaciones:</h3>
+
+<textarea txtnombre="txtobservaciones" id="txtobservaciones" cols="50" rows="7" placeholder="Comentarios adicionales:"></textarea>
+<br /><br />
+<input type="submit"  class="boton1" value="Enviar" size="30px" id="btn_grabar">
+<input onclick="borrar()" class="boton2" type="button" value="RESET">
+
+<script>
+  function enviar(){
+    alert("Compra Realizada");  
+  }
+  function borrar(){
+    alert("Borraste la informacion");  
+  }
+  
+</script>
+
+
+</div>
+</form>
+</div>
 <!-- contenido inferior -->
   </div>
 
